@@ -1,0 +1,31 @@
+{
+  "item.monster_checklist_mod_1784790200.monster_checklist": "怪物清单",
+
+  "screen.monster_checklist_mod_1784790200.monster_checklist": "怪物清单",
+  "screen.monster_checklist_mod_1784790200.stat_title": "怪物图鉴进度",
+  "screen.monster_checklist_mod_1784790200.unlocked_count": "已解锁: %s/%s 种怪物",
+  "screen.monster_checklist_mod_1784790200.milestone_count": "里程碑: %s/%s",
+  "screen.monster_checklist_mod_1784790200.all_complete": "全部解锁!",
+
+  "command.monster_checklist_mod_1784790200.gift_success": "已发放属性奖励!",
+  "message.monster_checklist_mod_1784790200.milestone_reached": "§a里程碑达成! 已解锁 %s 种怪物!",
+  "message.monster_checklist_mod_1784790200.attribute_boosted": "§b✦ %s +%s",
+
+  "monster_checklist_mod_1784790200.configuration.title": "怪物清单配置",
+  "monster_checklist_mod_1784790200.configuration.milestones": "里程碑设置",
+  "monster_checklist_mod_1784790200.configuration.milestoneThresholds": "解锁阈值",
+  "monster_checklist_mod_1784790200.configuration.milestoneThresholds.tooltip": "每达成一个里程碑所需的已解锁怪物数量（升序排列）",
+
+  "attribute.monster_checklist_mod_1784790200.max_health": "最大生命值",
+  "attribute.monster_checklist_mod_1784790200.movement_speed": "移动速度",
+  "attribute.monster_checklist_mod_1784790200.luck": "幸运",
+  "attribute.monster_checklist_mod_1784790200.knockback_resistance": "击退抗性",
+  "attribute.monster_checklist_mod_1784790200.armor": "护甲值",
+  "attribute.monster_checklist_mod_1784790200.armor_toughness": "护甲韧性",
+  "attribute.monster_checklist_mod_1784790200.entity_interaction_range": "实体交互距离",
+  "attribute.monster_checklist_mod_1784790200.block_interaction_range": "方块交互距离",
+  "attribute.monster_checklist_mod_1784790200.mining_efficiency": "挖掘效率",
+  "attribute.monster_checklist_mod_1784790200.dodge_chance": "闪避率",
+  "attribute.monster_checklist_mod_1784790200.crit_chance": "暴击率",
+  "attribute.monster_checklist_mod_1784790200.max_energy": "精力上限"
+}

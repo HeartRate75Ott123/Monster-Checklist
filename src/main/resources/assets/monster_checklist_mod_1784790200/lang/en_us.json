@@ -1,0 +1,31 @@
+{
+  "item.monster_checklist_mod_1784790200.monster_checklist": "Monster Checklist",
+
+  "screen.monster_checklist_mod_1784790200.monster_checklist": "Monster Checklist",
+  "screen.monster_checklist_mod_1784790200.stat_title": "Monster Progress",
+  "screen.monster_checklist_mod_1784790200.unlocked_count": "Unlocked: %s/%s monsters",
+  "screen.monster_checklist_mod_1784790200.milestone_count": "Milestones: %s/%s",
+  "screen.monster_checklist_mod_1784790200.all_complete": "All Complete!",
+
+  "command.monster_checklist_mod_1784790200.gift_success": "Attribute boost granted!",
+  "message.monster_checklist_mod_1784790200.milestone_reached": "§aMilestone reached! Unlocked %s monsters!",
+  "message.monster_checklist_mod_1784790200.attribute_boosted": "§b✦ %s +%s",
+
+  "monster_checklist_mod_1784790200.configuration.title": "Monster Checklist Config",
+  "monster_checklist_mod_1784790200.configuration.milestones": "Milestone Settings",
+  "monster_checklist_mod_1784790200.configuration.milestoneThresholds": "Unlock Thresholds",
+  "monster_checklist_mod_1784790200.configuration.milestoneThresholds.tooltip": "Number of unlocked monsters required per milestone (sorted ascending)",
+
+  "attribute.monster_checklist_mod_1784790200.max_health": "Max Health",
+  "attribute.monster_checklist_mod_1784790200.movement_speed": "Movement Speed",
+  "attribute.monster_checklist_mod_1784790200.luck": "Luck",
+  "attribute.monster_checklist_mod_1784790200.knockback_resistance": "Knockback Resistance",
+  "attribute.monster_checklist_mod_1784790200.armor": "Armor",
+  "attribute.monster_checklist_mod_1784790200.armor_toughness": "Armor Toughness",
+  "attribute.monster_checklist_mod_1784790200.entity_interaction_range": "Entity Reach",
+  "attribute.monster_checklist_mod_1784790200.block_interaction_range": "Block Reach",
+  "attribute.monster_checklist_mod_1784790200.mining_efficiency": "Mining Efficiency",
+  "attribute.monster_checklist_mod_1784790200.dodge_chance": "Dodge Chance",
+  "attribute.monster_checklist_mod_1784790200.crit_chance": "Crit Chance",
+  "attribute.monster_checklist_mod_1784790200.max_energy": "Max Energy"
+}

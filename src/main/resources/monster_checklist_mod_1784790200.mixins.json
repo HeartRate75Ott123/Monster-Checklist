@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "cn.autoforged.monster_checklist_mod_1784790200.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "refmap": "monster_checklist_mod_1784790200.refmap.json",
+  "mixins": [
+    "FieldGuideUnlockMixin"
+  ],
+  "client": [],
+  "server": []
+}
