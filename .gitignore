@@ -49,3 +49,10 @@ base-mod-api/
 base-mod-src/
 .oss-basemod-repo/
 base-mod-libs/
+
+### Runtime / temp ###
+client.log
+nbt
+PaxHeaders.X/
+META-INF/neoforge.mods.toml
+.build-target-props.json

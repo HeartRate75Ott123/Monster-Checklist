@@ -45,18 +45,32 @@ public class ModEventHandlers {
     @SubscribeEvent
     public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
         if (!(event.getEntity() instanceof ServerPlayer player)) return;
+        restoreAttributeBoosts(player);
         checkAndGrantMilestones(player);
+    }
+
+    @SubscribeEvent
+    public void onPlayerClone(PlayerEvent.Clone event) {
+        if (!event.isWasDeath()) return;
+        if (!(event.getEntity() instanceof ServerPlayer newPlayer)) return;
+        ServerPlayer oldPlayer = (ServerPlayer) event.getOriginal();
+        newPlayer.setData(ModAttachmentTypes.CLAIMED_MILESTONES.get(),
+                oldPlayer.getData(ModAttachmentTypes.CLAIMED_MILESTONES.get()));
+        newPlayer.setData(ModAttachmentTypes.ATTRIBUTE_BOOSTS.get(),
+                oldPlayer.getData(ModAttachmentTypes.ATTRIBUTE_BOOSTS.get()).copy());
     }
 
     @SubscribeEvent
     public void onPlayerRespawn(PlayerEvent.PlayerRespawnEvent event) {
         if (!(event.getEntity() instanceof ServerPlayer player)) return;
+        restoreAttributeBoosts(player);
         checkAndGrantMilestones(player);
     }
 
     @SubscribeEvent
     public void onPlayerChangedDimension(PlayerEvent.PlayerChangedDimensionEvent event) {
         if (!(event.getEntity() instanceof ServerPlayer player)) return;
+        restoreAttributeBoosts(player);
         checkAndGrantMilestones(player);
     }
 
@@ -83,6 +97,17 @@ public class ModEventHandlers {
 
         if (changed) {
             player.setData(type, claimed);
+        }
+    }
+
+    public static void restoreAttributeBoosts(ServerPlayer player) {
+        CompoundTag boosts = player.getData(ModAttachmentTypes.ATTRIBUTE_BOOSTS.get());
+        if (boosts.isEmpty()) return;
+        for (BoostSlot slot : BOOST_POOL) {
+            int level = boosts.getInt(slot.key());
+            if (level > 0 && !"max_energy".equals(slot.key())) {
+                applyModifier(player, slot, level);
+            }
         }
     }
 
