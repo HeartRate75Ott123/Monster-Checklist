@@ -2,6 +2,8 @@ package cn.autoforged.monster_checklist_mod_1784790200;
 
 import cn.autoforged.monster_checklist_mod_1784790200.config.ModConfig;
 import cn.autoforged.monster_checklist_mod_1784790200.tracking.ModAttachmentTypes;
+import com.evandev.fieldguide.entry.EntryResolver;
+import com.evandev.fieldguide.server.ServerFieldGuideManager;
 import com.evandev.fieldguide.server.progress.FieldGuideProgressManager;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -10,6 +12,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
@@ -78,7 +81,20 @@ public class ModEventHandlers {
         var progress = FieldGuideProgressManager.getInstance().getProgress(player);
         if (progress == null) return;
 
-        int unlockedCount = progress.getUnlockedEntries().size();
+        var manager = ServerFieldGuideManager.getInstance();
+        var resolved = manager.getResolvedEntries();
+        int unlockedCount = 0;
+        for (var catEntry : resolved.entrySet()) {
+            if (!catEntry.getKey().getPath().contains("monster")) continue;
+            for (Object obj : catEntry.getValue()) {
+                if (EntryResolver.resolveCoreEntry(obj) instanceof EntityType) {
+                    ResourceLocation entryId = EntryResolver.getEntryId(obj);
+                    if (entryId != null && progress.isUnlocked(entryId)) {
+                        unlockedCount++;
+                    }
+                }
+            }
+        }
         var type = ModAttachmentTypes.CLAIMED_MILESTONES.get();
         int claimed = player.getData(type);
 
