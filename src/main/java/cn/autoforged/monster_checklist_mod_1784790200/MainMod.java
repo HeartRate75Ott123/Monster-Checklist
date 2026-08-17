@@ -26,7 +26,7 @@ public class MainMod {
         ModAttachmentTypes.ATTACHMENT_TYPES.register(modEventBus);
         ModAttributes.ATTRIBUTES.register(modEventBus);
 
-        modContainer.registerConfig(Type.CLIENT, ModConfig.SPEC);
+        modContainer.registerConfig(Type.COMMON, ModConfig.SPEC);
         modEventBus.addListener(this::onAttributeModification);
         modEventBus.addListener(ModCreativeTabs::onBuildCreativeTabs);
         NeoForge.EVENT_BUS.register(new ModEventHandlers());

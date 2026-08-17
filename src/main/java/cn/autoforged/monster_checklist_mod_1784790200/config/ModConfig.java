@@ -26,6 +26,9 @@ public class ModConfig {
     }
 
     public static int[] getMilestoneArray() {
+        if (!SPEC.isLoaded()) {
+            return DEFAULT_MILESTONES.stream().mapToInt(Integer::intValue).toArray();
+        }
         return MILESTONE_THRESHOLDS.get().stream().mapToInt(Integer::intValue).toArray();
     }
 
